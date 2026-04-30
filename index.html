@@ -1,30 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bs">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Admin Panel</title>
+    <title>Admin Panel - Natron Hayat</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Admin Status Panel</h1>
 
-        <!-- Polje za ime administratora -->
-        <input type="text" id="adminName" placeholder="Unesi svoje ime" style="margin-bottom: 10px; padding: 5px;">
+    <div class="sidebar">
+        <h2 class="logo">EVIDENCIJE</h2>
 
-        <div id="status-box">Učitavam...</div>
+        <!-- MODUL VOZILA SA POD-STRUKTUROM -->
+        <div class="menu-group">
+            <button class="main-tab" onclick="toggleSubmenu('vozila-sub')">VOZILA <span class="arrow">▾</span></button>
+            <div id="vozila-sub" class="submenu">
+                <button class="sub-link" onclick="showModule('putni-nalog')">Putni nalog</button>
+                <button class="sub-link" onclick="showModule('ovlastenje')">Ovlaštenje za upravljanje</button>
+                <button class="sub-link" onclick="showModule('potrosnja')">Potrošnja goriva</button>
+            </div>
+        </div>
 
-        <!-- Ovdje ćemo prikazati vrijeme -->
-        <div id="time-box" style="font-size: 0.9em; color: gray; margin-bottom: 15px;"></div>
-
-        <button id="testBtn">Ažuriraj Status</button>
+        <!-- OSTALI GLAVNI MODULI -->
+        <button class="main-tab no-sub" onclick="showModule('odluke')">ODLUKE</button>
+        <button class="main-tab no-sub" onclick="showModule('posta')">POŠTA</button>
+        <button class="main-tab no-sub" onclick="showModule('prevodi')">PREVODI</button>
     </div>
 
-    <!-- Veza sa tvojim JavaScript fajlom -->
-    <script type="module" src="app.js"></script>
+    <div class="main-content">
+        <div id="welcome-screen" class="module">
+            <h1>Dobrodošli u Administrativni Panel</h1>
+            <p>Izaberite kategoriju sa lijeve strane za početak rada.</p>
+        </div>
+
+        <!-- MODULI ZA VOZILA -->
+        <div id="putni-nalog" class="module" style="display:none;">
+            <h1>Putni Nalozi</h1>
+            <p>Sadržaj za putne naloge će biti ovdje.</p>
+        </div>
+
+        <div id="ovlastenje" class="module" style="display:none;">
+            <h1>Ovlaštenja za upravljanje vozilom</h1>
+            <p>Evidencija izdatih ovlaštenja.</p>
+        </div>
+
+        <div id="potrosnja" class="module" style="display:none;">
+            <h1>Potrošnja goriva</h1>
+            <p>Praćenje potrošnje i računa za gorivo.</p>
+        </div>
+
+        <!-- OSTALI MODULI -->
+        <div id="odluke" class="module" style="display:none;">
+            <h1>Odluke</h1>
+            <p>Evidencija odluka, skupštine i nadzornog odbora.</p>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
 </body>
 
 </html>
