@@ -38,7 +38,35 @@
         <!-- MODULI ZA VOZILA -->
         <div id="putni-nalog" class="module" style="display:none;">
             <h1>Putni Nalozi</h1>
-            <p>Sadržaj za putne naloge će biti ovdje.</p>
+            <div class="input-form">
+                <input type="text" id="pn-vozilo" placeholder="Vozilo (Model/Tablice)">
+                <input type="text" id="pn-relacija" placeholder="Relacija (Od - Do)">
+                <input type="text" id="pn-svrha" placeholder="Svrha putovanja">
+                <input type="number" id="pn-km" placeholder="Početna KM">
+
+                <!-- Nova specifična polja -->
+                <input type="time" id="pn-vrijeme" title="Vrijeme polaska">
+                <input type="text" id="pn-odobrio" placeholder="Nalog izdao/odobrio">
+
+                <button onclick="spasiPutniNalog()">Evidentiraj Nalog</button>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Vozilo</th>
+                        <th>Relacija</th>
+                        <th>Svrha</th>
+                        <th>Vrijeme</th>
+                        <th>Odobrio</th>
+                        <th>KM</th>
+                        <th>Datum</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-putnih-naloga">
+                    <!-- Podaci iz Firebase-a -->
+                </tbody>
+            </table>
         </div>
 
         <div id="ovlastenje" class="module" style="display:none;">
