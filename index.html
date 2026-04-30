@@ -13,9 +13,9 @@
     <div class="sidebar">
         <h2 class="logo">EVIDENCIJE</h2>
 
-        <!-- MODUL VOZILA SA POD-STRUKTUROM -->
+        <!-- GLAVNI MODUL: VOZILA -->
         <div class="menu-group">
-            <button class="main-tab" onclick="toggleSubmenu('vozila-sub')">VOZILA <span class="arrow">▾</span></button>
+            <button class="main-tab" onclick="toggleSubmenu('vozila-sub')">VOZILA ▾</button>
             <div id="vozila-sub" class="submenu">
                 <button class="sub-link" onclick="showModule('putni-nalog')">Putni nalog</button>
                 <button class="sub-link" onclick="showModule('ovlastenje')">Ovlaštenje za upravljanje</button>
@@ -30,12 +30,13 @@
     </div>
 
     <div class="main-content">
+        <!-- POČETNI EKRAN -->
         <div id="welcome-screen" class="module">
             <h1>Dobrodošli u Administrativni Panel</h1>
-            <p>Izaberite kategoriju sa lijeve strane za početak rada.</p>
+            <p>Izaberite kategoriju iz menija za početak unosa podataka.</p>
         </div>
 
-        <!-- MODULI ZA VOZILA -->
+        <!-- MODUL: PUTNI NALOG -->
         <div id="putni-nalog" class="module" style="display:none;">
             <h1>Putni Nalozi</h1>
             <div class="input-form">
@@ -43,11 +44,8 @@
                 <input type="text" id="pn-relacija" placeholder="Relacija (Od - Do)">
                 <input type="text" id="pn-svrha" placeholder="Svrha putovanja">
                 <input type="number" id="pn-km" placeholder="Početna KM">
-
-                <!-- Nova specifična polja -->
                 <input type="time" id="pn-vrijeme" title="Vrijeme polaska">
                 <input type="text" id="pn-odobrio" placeholder="Nalog izdao/odobrio">
-
                 <button onclick="spasiPutniNalog()">Evidentiraj Nalog</button>
             </div>
 
@@ -64,25 +62,23 @@
                     </tr>
                 </thead>
                 <tbody id="lista-putnih-naloga">
-                    <!-- Podaci iz Firebase-a -->
+                    <!-- Ovdje će se pojavljivati unosi -->
                 </tbody>
             </table>
         </div>
 
+        <!-- OSTALI MODULI (PROSTORI ZA BUDUĆI RAD) -->
         <div id="ovlastenje" class="module" style="display:none;">
-            <h1>Ovlaštenja za upravljanje vozilom</h1>
-            <p>Evidencija izdatih ovlaštenja.</p>
+            <h1>Ovlaštenja</h1>
+            <p>Modul u pripremi...</p>
         </div>
-
         <div id="potrosnja" class="module" style="display:none;">
             <h1>Potrošnja goriva</h1>
-            <p>Praćenje potrošnje i računa za gorivo.</p>
+            <p>Modul u pripremi...</p>
         </div>
-
-        <!-- OSTALI MODULI -->
         <div id="odluke" class="module" style="display:none;">
             <h1>Odluke</h1>
-            <p>Evidencija odluka, skupštine i nadzornog odbora.</p>
+            <p>Modul u pripremi...</p>
         </div>
     </div>
 
